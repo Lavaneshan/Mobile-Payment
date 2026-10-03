@@ -1,0 +1,2984 @@
+{
+  "version": "2.6.2",
+  "summary": {
+    "title": "Mobile Payment - Security Requirements Use-Case",
+    "owner": "Lavaneshan Sivanesan",
+    "description": "Threat Model für das Mobile Payment System gemäss Aufgabenstellung.",
+    "id": "e0be24ad-41d6-4776-a2b5-65247e6f4978"
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "description": "",
+        "diagramType": "STRIDE",
+        "id": 0,
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "title": "Mobile Payment - Context DFD",
+        "version": "2.6.2",
+        "cells": [
+          {
+            "position": {
+              "x": 21.999999999999204,
+              "y": 260
+            },
+            "size": {
+              "width": 1130,
+              "height": 720
+            },
+            "attrs": {
+              "label": {
+                "text": "Trust Boundary"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "4af05dc5-5491-4c54-9a72-58775100194a",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Trust Boundary",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [
+                "230927fb-d1a1-4bfb-9760-842387eac1e4",
+                "8cb0ce80-314e-4692-9376-00a8797f604a",
+                "85618b87-b573-453f-9112-c98e62aec2c8",
+                "6f703c8a-7a2f-461c-9ef9-c0f81836ffda",
+                "58d0728d-5bae-4176-98d4-9dcb508f6138",
+                "6d7bbacf-2468-4d28-8191-6dd5577b92bd",
+                "89d5f70a-163c-4bf3-9903-ce140ca2e78c",
+                "d11e006d-b4b1-4a84-bc5f-9f55403e6340",
+                "051e1bf5-1c42-4932-823e-948bc4a52293",
+                "89ba66e2-1e16-44eb-81f0-4a26229acbfb"
+              ],
+              "containedElements": [
+                "09d3e4c7-ab9c-4c9b-8711-d8a2182db733",
+                "e3c362df-c019-42fa-8ca8-9154eed31a81",
+                "51a0e651-0f11-4b80-9553-cd954037ebce",
+                "c8e19a19-cb48-47d5-9c4d-ae41b40e66c0",
+                "fd2439f9-fffd-4cca-b1ce-33d3ffe0935b",
+                "f047372a-a329-4e9e-bd72-fc9a9469b022",
+                "3ce8874d-9093-4e30-a862-14939e1fc856",
+                "a07af672-62a9-47f7-939f-f371a2bbad52",
+                "bc30bd38-31e3-424d-a1ee-b97728e3ca80"
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 60,
+              "y": 40
+            },
+            "size": {
+              "width": 180,
+              "height": 90
+            },
+            "attrs": {
+              "text": {
+                "text": "Händler"
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 1,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "28e8f587-d347-4e3f-9504-b146f2cbcee1"
+                },
+                {
+                  "group": "right",
+                  "id": "c84b7cf5-ef71-4962-8ad2-e431e76f971a"
+                },
+                {
+                  "group": "bottom",
+                  "id": "d89bf871-9a19-4c33-981e-315fe707893a"
+                },
+                {
+                  "group": "left",
+                  "id": "bb69d8a4-df57-4f26-9b93-3a5b825bfc81"
+                }
+              ]
+            },
+            "id": "f3c75514-bfa8-4ade-a527-9a9486075a91",
+            "data": {
+              "name": "Händler",
+              "description": "Verkäufer/Shop mit Kassensystem (PoS). Zahlung via QR-Code oder NFC.",
+              "type": "tm.Actor",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "providesAuthentication": false
+            }
+          },
+          {
+            "position": {
+              "x": 340,
+              "y": 40
+            },
+            "size": {
+              "width": 180,
+              "height": 90
+            },
+            "attrs": {
+              "text": {
+                "text": "Kunde"
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 2,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "bde125d1-198d-4788-8a2d-cfe2851ec379"
+                },
+                {
+                  "group": "right",
+                  "id": "4a972b5a-f71e-48cc-9697-1e7521fcbc67"
+                },
+                {
+                  "group": "bottom",
+                  "id": "b2a40c05-11fa-4177-886f-9787c5e22330"
+                },
+                {
+                  "group": "left",
+                  "id": "5397e016-c710-4c65-b440-1905e37f8db7"
+                }
+              ]
+            },
+            "id": "45f50449-b26e-4de5-97a7-51b143e66372",
+            "data": {
+              "name": "Kunde",
+              "description": "Nutzer der Mobile Payment App (Customer).",
+              "type": "tm.Actor",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "providesAuthentication": false
+            }
+          },
+          {
+            "position": {
+              "x": 620,
+              "y": 40
+            },
+            "size": {
+              "width": 180,
+              "height": 90
+            },
+            "attrs": {
+              "text": {
+                "text": "Webshop"
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 3,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "d7c76d8a-699f-4f9b-a735-f1a5f4531063"
+                },
+                {
+                  "group": "right",
+                  "id": "7feeb578-f3bc-467f-acc1-e49606baf635"
+                },
+                {
+                  "group": "bottom",
+                  "id": "da72c04a-da51-46a1-a704-1c91b60d42e1"
+                },
+                {
+                  "group": "left",
+                  "id": "36fbf4e6-7e75-4749-be63-2d75f735f89a"
+                }
+              ]
+            },
+            "id": "de269935-9286-4208-abd8-455b70a7f8fd",
+            "data": {
+              "name": "Webshop",
+              "description": "Online-Shop, Zahlung via QR-Code oder 8-stelligem Code.",
+              "type": "tm.Actor",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "providesAuthentication": false
+            }
+          },
+          {
+            "position": {
+              "x": 900,
+              "y": 40
+            },
+            "size": {
+              "width": 180,
+              "height": 90
+            },
+            "attrs": {
+              "text": {
+                "text": "Empfänger"
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 4,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "4771eda3-2b5e-4dde-9d12-53fd00faa78f"
+                },
+                {
+                  "group": "right",
+                  "id": "dfcaff91-c0bd-4716-9742-a0f4336f8842"
+                },
+                {
+                  "group": "bottom",
+                  "id": "69408897-4caa-4482-9645-70941f7bdcfe"
+                },
+                {
+                  "group": "left",
+                  "id": "b890a82f-9c5c-48d6-9f04-a1effe9cfec6"
+                }
+              ]
+            },
+            "id": "3885765d-a203-4832-a947-86d91b6f5191",
+            "data": {
+              "name": "Empfänger",
+              "description": "Anderer Nutzer der App: empfängt P2P-Überweisungen oder Gift Vouchers.",
+              "type": "tm.Actor",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "providesAuthentication": false
+            }
+          },
+          {
+            "position": {
+              "x": 475,
+              "y": 260
+            },
+            "size": {
+              "width": 200,
+              "height": 130
+            },
+            "attrs": {
+              "text": {
+                "text": "Mobile\nPayment-App"
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 5,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "4c1fb8f5-314d-4c30-9c53-19041c91ede7"
+                },
+                {
+                  "group": "right",
+                  "id": "f5b59dbd-52b2-496a-acfe-91c017776133"
+                },
+                {
+                  "group": "bottom",
+                  "id": "ab8156f2-1520-41b3-b680-744db014f7e2"
+                },
+                {
+                  "group": "left",
+                  "id": "2b51a573-0428-488d-841d-15679031fdda"
+                }
+              ]
+            },
+            "id": "09d3e4c7-ab9c-4c9b-8711-d8a2182db733",
+            "data": {
+              "name": "Mobile\nPayment-App",
+              "description": "Mobile App des Kunden (iOS/Android), offiziell im jeweiligen Appstore zugelassen. Läuft auf dem Gerät des Kunden - daher ausserhalb der Trust Boundary des Anbieters.",
+              "type": "tm.Process",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 60,
+              "y": 460
+            },
+            "size": {
+              "width": 190,
+              "height": 110
+            },
+            "attrs": {
+              "text": {
+                "text": "Händler\nBackend"
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 6,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "028b0d8f-7c86-4a3e-80b5-903ca0627002"
+                },
+                {
+                  "group": "right",
+                  "id": "78787438-698c-4a39-b822-8deb51df7850"
+                },
+                {
+                  "group": "bottom",
+                  "id": "9c2fc866-a873-4472-aca6-874920b61838"
+                },
+                {
+                  "group": "left",
+                  "id": "576bd99b-f87f-45e0-819f-c51c511daa91"
+                }
+              ]
+            },
+            "id": "e3c362df-c019-42fa-8ca8-9154eed31a81",
+            "data": {
+              "name": "Händler\nBackend",
+              "description": "Internes Backend zur Verwaltung der Merchants.",
+              "type": "tm.Process",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 340,
+              "y": 460
+            },
+            "size": {
+              "width": 190,
+              "height": 110
+            },
+            "attrs": {
+              "text": {
+                "text": "Kunden\nBackend"
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 7,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "a2e86691-4dc1-49a0-85c1-27641dfbbefb"
+                },
+                {
+                  "group": "right",
+                  "id": "eaefe399-6540-40b6-8b87-255d577ff769"
+                },
+                {
+                  "group": "bottom",
+                  "id": "f24eb37b-c625-427b-82f8-b6abcc1edede"
+                },
+                {
+                  "group": "left",
+                  "id": "c810825d-3acc-462d-b10d-ef657fee72fe"
+                }
+              ]
+            },
+            "id": "51a0e651-0f11-4b80-9553-cd954037ebce",
+            "data": {
+              "name": "Kunden\nBackend",
+              "description": "Internes Backend zur Verwaltung der Kunden.",
+              "type": "tm.Process",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 620,
+              "y": 460
+            },
+            "size": {
+              "width": 190,
+              "height": 130
+            },
+            "attrs": {
+              "text": {
+                "text": "Loyalty- &\nVoucher-\nService"
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 8,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "7a286a5b-2c3b-4a95-9c59-9b1648148656"
+                },
+                {
+                  "group": "right",
+                  "id": "0cae6a02-ea4f-4324-a10d-b7ee6b22e9ab"
+                },
+                {
+                  "group": "bottom",
+                  "id": "e583b8a8-077b-44fa-8538-96dba0d069bc"
+                },
+                {
+                  "group": "left",
+                  "id": "51a3395d-4fb4-4fd1-bd70-31e70284454b"
+                }
+              ]
+            },
+            "id": "c8e19a19-cb48-47d5-9c4d-ae41b40e66c0",
+            "data": {
+              "name": "Loyalty- &\nVoucher-\nService",
+              "description": "Verwaltet Couponing, Stempelkarten und Gift Vouchers (Pre-Pay Geschenkkarten).",
+              "type": "tm.Process",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 900,
+              "y": 460
+            },
+            "size": {
+              "width": 190,
+              "height": 130
+            },
+            "attrs": {
+              "text": {
+                "text": "Händler\nAdministrations-\noberfläche"
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 9,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "6aee2995-23b6-47f7-9f48-df85e9e1f0fc"
+                },
+                {
+                  "group": "right",
+                  "id": "632d9a07-6be1-421b-ba7d-5323b5eac700"
+                },
+                {
+                  "group": "bottom",
+                  "id": "2e4686ac-bef9-473e-bc24-89dc70e39032"
+                },
+                {
+                  "group": "left",
+                  "id": "8df33ae6-81c4-4e30-9b36-35975c7c5671"
+                }
+              ]
+            },
+            "id": "fd2439f9-fffd-4cca-b1ce-33d3ffe0935b",
+            "data": {
+              "name": "Händler\nAdministrations-\noberfläche",
+              "description": "Frontend zur Selbstadministration der Merchants. https, extern zugänglich, Login via 2FA.",
+              "type": "tm.Process",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 465,
+              "y": 660
+            },
+            "size": {
+              "width": 220,
+              "height": 140
+            },
+            "attrs": {
+              "text": {
+                "text": "Kernbank-\nsystem"
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 10,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "bddb9517-a3fa-4f1b-aed9-27c12933c77c"
+                },
+                {
+                  "group": "right",
+                  "id": "e6230231-8f89-48c1-9e25-daa2d7f73719"
+                },
+                {
+                  "group": "bottom",
+                  "id": "75641a17-0dca-4260-95e6-c17862b2e5c8"
+                },
+                {
+                  "group": "left",
+                  "id": "41af6793-b82b-41b8-ab67-4ea091e5acd1"
+                }
+              ]
+            },
+            "id": "f047372a-a329-4e9e-bd72-fc9a9469b022",
+            "data": {
+              "name": "Kernbank-\nsystem",
+              "description": "Core Banking System: finanzielle Transaktionen und Buchführung nach FINMA-Regeln. Webservices zu externen Schnittstellen (Banken, Kreditkartenanbieter).",
+              "type": "tm.Process",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Anmeldung,\nZahlungsauslösung",
+              "description": "Login und Start einer Zahlung in der App",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "4af05dc5-5491-4c54-9a72-58775100194a"
+              ]
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "Anmeldung,\nZahlungsauslösung"
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "id": "230927fb-d1a1-4bfb-9760-842387eac1e4",
+            "source": {
+              "cell": "45f50449-b26e-4de5-97a7-51b143e66372"
+            },
+            "target": {
+              "cell": "09d3e4c7-ab9c-4c9b-8711-d8a2182db733"
+            },
+            "vertices": [
+              {
+                "x": 500,
+                "y": 170
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Guthaben laden\n(Voucher, Bankkonto,\nKreditkarte)",
+              "description": "Kunde startet eine Ladetransaktion",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "4af05dc5-5491-4c54-9a72-58775100194a"
+              ]
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "Guthaben laden\n(Voucher, Bankkonto,\nKreditkarte)"
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "id": "8cb0ce80-314e-4692-9376-00a8797f604a",
+            "source": {
+              "cell": "45f50449-b26e-4de5-97a7-51b143e66372"
+            },
+            "target": {
+              "cell": "09d3e4c7-ab9c-4c9b-8711-d8a2182db733"
+            },
+            "vertices": [
+              {
+                "x": 575,
+                "y": 120
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Coupon/Stempelkarte\nanzeigen",
+              "description": "Kunde ruft Coupons/Stempelkarten-Stand auf",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "4af05dc5-5491-4c54-9a72-58775100194a"
+              ]
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "Coupon/Stempelkarte\nanzeigen"
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "id": "85618b87-b573-453f-9112-c98e62aec2c8",
+            "source": {
+              "cell": "45f50449-b26e-4de5-97a7-51b143e66372"
+            },
+            "target": {
+              "cell": "09d3e4c7-ab9c-4c9b-8711-d8a2182db733"
+            },
+            "vertices": [
+              {
+                "x": 320,
+                "y": 170
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Gift Voucher kaufen\n(für Empfänger)",
+              "description": "Kunde kauft Prepay-Geschenkkarte für anderen Nutzer",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "4af05dc5-5491-4c54-9a72-58775100194a"
+              ]
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "Gift Voucher kaufen\n(für Empfänger)"
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "id": "6f703c8a-7a2f-461c-9ef9-c0f81836ffda",
+            "source": {
+              "cell": "45f50449-b26e-4de5-97a7-51b143e66372"
+            },
+            "target": {
+              "cell": "09d3e4c7-ab9c-4c9b-8711-d8a2182db733"
+            },
+            "vertices": [
+              {
+                "x": 210,
+                "y": 200
+              },
+              {
+                "x": 240,
+                "y": 220
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "QR-Code / NFC",
+              "description": "Zahlung am Kassensystem per QR-Code oder NFC",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "4af05dc5-5491-4c54-9a72-58775100194a"
+              ]
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "QR-Code / NFC"
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "id": "58d0728d-5bae-4176-98d4-9dcb508f6138",
+            "source": {
+              "cell": "09d3e4c7-ab9c-4c9b-8711-d8a2182db733"
+            },
+            "target": {
+              "cell": "f3c75514-bfa8-4ade-a527-9a9486075a91"
+            },
+            "vertices": [
+              {
+                "x": 70,
+                "y": 220
+              },
+              {
+                "x": 90,
+                "y": 170
+              },
+              {
+                "x": 130,
+                "y": 200
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "QR-Code /\n8-stelliger Code",
+              "description": "Zahlung im Webshop",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "4af05dc5-5491-4c54-9a72-58775100194a"
+              ]
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "QR-Code /\n8-stelliger Code"
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "id": "6d7bbacf-2468-4d28-8191-6dd5577b92bd",
+            "source": {
+              "cell": "09d3e4c7-ab9c-4c9b-8711-d8a2182db733"
+            },
+            "target": {
+              "cell": "de269935-9286-4208-abd8-455b70a7f8fd"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Peer-to-Peer-\nÜberweisung\n(Telefonnummer)",
+              "description": "P2P-Zahlung an anderen Nutzer",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "4af05dc5-5491-4c54-9a72-58775100194a"
+              ]
+            },
+            "labels": [
+              "Peer-to-Peer-\nÜberweisung\n(Telefonnummer)"
+            ],
+            "id": "89d5f70a-163c-4bf3-9903-ce140ca2e78c",
+            "source": {
+              "cell": "09d3e4c7-ab9c-4c9b-8711-d8a2182db733"
+            },
+            "target": {
+              "cell": "3885765d-a203-4832-a947-86d91b6f5191"
+            },
+            "vertices": [
+              {
+                "x": 1130,
+                "y": 170
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Gift Voucher\neinlösen",
+              "description": "Empfänger gibt erhaltenen Code ein",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "4af05dc5-5491-4c54-9a72-58775100194a"
+              ]
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "Gift Voucher\neinlösen"
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "id": "d11e006d-b4b1-4a84-bc5f-9f55403e6340",
+            "source": {
+              "cell": "3885765d-a203-4832-a947-86d91b6f5191"
+            },
+            "target": {
+              "cell": "09d3e4c7-ab9c-4c9b-8711-d8a2182db733"
+            },
+            "vertices": [
+              {
+                "x": 890,
+                "y": 200
+              },
+              {
+                "x": 790,
+                "y": 200
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Authentifizierung,\nTransaktion",
+              "description": "App sendet Login-/Zahlungsdaten",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "Authentifizierung,\nTransaktion"
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "id": "a6b1f021-f53d-4bf5-8ebc-e6446cd22d96",
+            "source": {
+              "cell": "09d3e4c7-ab9c-4c9b-8711-d8a2182db733"
+            },
+            "target": {
+              "cell": "51a0e651-0f11-4b80-9553-cd954037ebce"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Lade-Transaktion\nübermitteln",
+              "description": "Übermittlung der Lademethode",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "Lade-Transaktion\nübermitteln"
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "id": "06d6131c-bc88-4728-9ba3-48349ff4d388",
+            "source": {
+              "cell": "09d3e4c7-ab9c-4c9b-8711-d8a2182db733"
+            },
+            "target": {
+              "cell": "51a0e651-0f11-4b80-9553-cd954037ebce"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Gift-Voucher-Kauf\nübermitteln",
+              "description": "Kaufwunsch eines Gift Vouchers",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "Gift-Voucher-Kauf\nübermitteln"
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "id": "5ec82a8f-365b-44cf-ac42-1f3a8f527f08",
+            "source": {
+              "cell": "09d3e4c7-ab9c-4c9b-8711-d8a2182db733"
+            },
+            "target": {
+              "cell": "51a0e651-0f11-4b80-9553-cd954037ebce"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Coupon-/Stempel-\nTransaktion übermitteln",
+              "description": "Einlösung Coupon oder neuer Stempel",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "Coupon-/Stempel-\nTransaktion übermitteln"
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "id": "48034aef-1fb6-4c88-ab17-b1bf682189b1",
+            "source": {
+              "cell": "09d3e4c7-ab9c-4c9b-8711-d8a2182db733"
+            },
+            "target": {
+              "cell": "c8e19a19-cb48-47d5-9c4d-ae41b40e66c0"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Gift-Voucher-Code\nvalidieren",
+              "description": "Prüfung: gültig? bereits eingelöst?",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "Gift-Voucher-Code\nvalidieren"
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "id": "bec6121f-9032-47c6-822b-81f3bbf8212a",
+            "source": {
+              "cell": "09d3e4c7-ab9c-4c9b-8711-d8a2182db733"
+            },
+            "target": {
+              "cell": "c8e19a19-cb48-47d5-9c4d-ae41b40e66c0"
+            },
+            "vertices": [
+              {
+                "x": 740,
+                "y": 400
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Zahlungsdaten",
+              "description": "Abgleich Kunden-/Händler Backend",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "Zahlungsdaten"
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "id": "6d3a9e77-040e-4595-bab2-93286dd9c84f",
+            "source": {
+              "cell": "51a0e651-0f11-4b80-9553-cd954037ebce"
+            },
+            "target": {
+              "cell": "e3c362df-c019-42fa-8ca8-9154eed31a81"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Gift-Voucher-Code\ngenerieren",
+              "description": "Eindeutigen, zufälligen Code erzeugen",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "Gift-Voucher-Code\ngenerieren"
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "id": "8bd91132-9d41-4b33-832e-128068ff9c49",
+            "source": {
+              "cell": "51a0e651-0f11-4b80-9553-cd954037ebce"
+            },
+            "target": {
+              "cell": "c8e19a19-cb48-47d5-9c4d-ae41b40e66c0"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Rabattregeln /\nKampagnen verwalten",
+              "description": "Merchant definiert Coupon-Kampagnen",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "Rabattregeln /\nKampagnen verwalten"
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "id": "43e2a8e1-c183-4ebf-ab58-ecd250252335",
+            "source": {
+              "cell": "fd2439f9-fffd-4cca-b1ce-33d3ffe0935b"
+            },
+            "target": {
+              "cell": "c8e19a19-cb48-47d5-9c4d-ae41b40e66c0"
+            },
+            "vertices": [
+              {
+                "x": 900,
+                "y": 460
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Gutschrift\nverbuchen",
+              "description": "Zu verbuchende Transaktion melden",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "Gutschrift\nverbuchen"
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "id": "770452de-b7b0-4993-a8ac-7de3a939243a",
+            "source": {
+              "cell": "51a0e651-0f11-4b80-9553-cd954037ebce"
+            },
+            "target": {
+              "cell": "f047372a-a329-4e9e-bd72-fc9a9469b022"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Guthaben belasten\n(Gift Voucher)",
+              "description": "Käufer-Guthaben reservieren",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "Guthaben belasten\n(Gift Voucher)"
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "id": "7d95a66f-cb30-4723-ba3e-ecbfa1556cb9",
+            "source": {
+              "cell": "51a0e651-0f11-4b80-9553-cd954037ebce"
+            },
+            "target": {
+              "cell": "f047372a-a329-4e9e-bd72-fc9a9469b022"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Zahlungsdaten",
+              "description": "Zahlungsdaten zur Verbuchung",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "Zahlungsdaten"
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "id": "6c933ae7-1c86-4520-bab6-b8fe97896c9f",
+            "source": {
+              "cell": "e3c362df-c019-42fa-8ca8-9154eed31a81"
+            },
+            "target": {
+              "cell": "f047372a-a329-4e9e-bd72-fc9a9469b022"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Verwaltungszugriff\n(https, 2FA)",
+              "description": "Zugriff auf Kontodaten",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "Verwaltungszugriff\n(https, 2FA)"
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "id": "7821e17e-2bd6-4991-b7a4-5eb435e60eee",
+            "source": {
+              "cell": "fd2439f9-fffd-4cca-b1ce-33d3ffe0935b"
+            },
+            "target": {
+              "cell": "f047372a-a329-4e9e-bd72-fc9a9469b022"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Gutschrift verbuchen\n(Gift Voucher)",
+              "description": "Guthaben dem Empfänger gutschreiben",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "Gutschrift verbuchen\n(Gift Voucher)"
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "id": "584e1be3-2606-4d81-b5e9-1df7429f8ad6",
+            "source": {
+              "cell": "c8e19a19-cb48-47d5-9c4d-ae41b40e66c0"
+            },
+            "target": {
+              "cell": "f047372a-a329-4e9e-bd72-fc9a9469b022"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Lastschrift\nBankkonto (Ladung)",
+              "description": "Debit-Ladung via Lastschrift",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "4af05dc5-5491-4c54-9a72-58775100194a"
+              ]
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "Lastschrift\nBankkonto (Ladung)"
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "id": "051e1bf5-1c42-4932-823e-948bc4a52293",
+            "source": {
+              "cell": "f047372a-a329-4e9e-bd72-fc9a9469b022"
+            },
+            "target": {
+              "cell": "b89954e0-dcbb-4840-bb8f-06331217b4f3"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Kreditkarten-\nBelastung (Ladung)",
+              "description": "Kredit-Ladung via Webservice",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "4af05dc5-5491-4c54-9a72-58775100194a"
+              ]
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "Kreditkarten-\nBelastung (Ladung)"
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "id": "89ba66e2-1e16-44eb-81f0-4a26229acbfb",
+            "source": {
+              "cell": "f047372a-a329-4e9e-bd72-fc9a9469b022"
+            },
+            "target": {
+              "cell": "74f4bb4f-6259-4f15-91b0-1c3f399ba499"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Stammdaten\nspeichern/lesen",
+              "description": "Kunden-/Empfänger-Stammdaten",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "Stammdaten\nspeichern/lesen"
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "id": "27258ff6-e2d1-42ad-be34-3f0717883dce",
+            "source": {
+              "cell": "51a0e651-0f11-4b80-9553-cd954037ebce"
+            },
+            "target": {
+              "cell": "3ce8874d-9093-4e30-a862-14939e1fc856"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Stammdaten\nspeichern/lesen",
+              "description": "Merchant-Stammdaten",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "Stammdaten\nspeichern/lesen"
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "id": "d0c15911-0d86-4233-b870-cf2f78dbc378",
+            "source": {
+              "cell": "e3c362df-c019-42fa-8ca8-9154eed31a81"
+            },
+            "target": {
+              "cell": "3ce8874d-9093-4e30-a862-14939e1fc856"
+            },
+            "vertices": [
+              {
+                "x": 120,
+                "y": 750
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Zahlungsdaten",
+              "description": "Zahlungsdaten in Transaktions-DB",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "Zahlungsdaten"
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "id": "a052975c-0aeb-4a7b-b75f-6ad3862370be",
+            "source": {
+              "cell": "e3c362df-c019-42fa-8ca8-9154eed31a81"
+            },
+            "target": {
+              "cell": "a07af672-62a9-47f7-939f-f371a2bbad52"
+            },
+            "vertices": [
+              {
+                "x": 150,
+                "y": 700
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Transaktion\nspeichern/lesen",
+              "description": "Buchhaltung nach FINMA-Regeln",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "Transaktion\nspeichern/lesen"
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "id": "0e6a91b8-4c8c-4a88-8608-d892c7911865",
+            "source": {
+              "cell": "f047372a-a329-4e9e-bd72-fc9a9469b022"
+            },
+            "target": {
+              "cell": "a07af672-62a9-47f7-939f-f371a2bbad52"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Stempel-/Coupon-\nStand speichern/lesen",
+              "description": "Persistenz Loyalty-Stand",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "Stempel-/Coupon-\nStand speichern/lesen"
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "id": "c0414d80-3720-43d8-a993-a9d363a55d2f",
+            "source": {
+              "cell": "c8e19a19-cb48-47d5-9c4d-ae41b40e66c0"
+            },
+            "target": {
+              "cell": "bc30bd38-31e3-424d-a1ee-b97728e3ca80"
+            },
+            "vertices": []
+          },
+          {
+            "position": {
+              "x": 195,
+              "y": 860
+            },
+            "size": {
+              "width": 200,
+              "height": 110
+            },
+            "attrs": {
+              "text": {
+                "text": "Kunden- und\nHändler-\nDatenbank"
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "zIndex": 11,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "77490c5f-9091-49a6-9f83-eeaa8f0eb23d"
+                },
+                {
+                  "group": "right",
+                  "id": "c337d77d-a4b8-4cd8-8445-602832e0eeb4"
+                },
+                {
+                  "group": "bottom",
+                  "id": "57a2c605-a310-4dad-9f8c-7d934d8535e7"
+                },
+                {
+                  "group": "left",
+                  "id": "8652d35a-83d0-48bd-ba6e-fd0ecbdfaca2"
+                }
+              ]
+            },
+            "id": "3ce8874d-9093-4e30-a862-14939e1fc856",
+            "data": {
+              "name": "Kunden- und\nHändler-\nDatenbank",
+              "description": "Stammdaten von Kunden und Merchants (inkl. P2P-Empfänger).",
+              "type": "tm.Store",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "isALog": false,
+              "storesCredentials": false,
+              "isEncrypted": false,
+              "isSigned": false
+            }
+          },
+          {
+            "position": {
+              "x": 450,
+              "y": 860
+            },
+            "size": {
+              "width": 220,
+              "height": 110
+            },
+            "attrs": {
+              "text": {
+                "text": "Transaktions-\nund Buch-\nhaltungsdatenbank"
+              },
+              "topLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "zIndex": 12,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "cab264ed-9b73-4554-8a87-5825e3c6f5a0"
+                },
+                {
+                  "group": "right",
+                  "id": "8e69c0ee-205f-4b4b-a187-c4e387241f9e"
+                },
+                {
+                  "group": "bottom",
+                  "id": "534e1c12-b473-4fd1-b320-ab26ab9d990e"
+                },
+                {
+                  "group": "left",
+                  "id": "78b5b5f7-81e1-4b08-b553-cc19888cfdcd"
+                }
+              ]
+            },
+            "id": "a07af672-62a9-47f7-939f-f371a2bbad52",
+            "data": {
+              "name": "Transaktions-\nund Buch-\nhaltungsdatenbank",
+              "description": "Transaktions- und Buchhaltungsdaten gemäss FINMA-Regeln.",
+              "type": "tm.Store",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "isALog": false,
+              "storesCredentials": false,
+              "isEncrypted": false,
+              "isSigned": false
+            }
+          },
+          {
+            "position": {
+              "x": 735,
+              "y": 860
+            },
+            "size": {
+              "width": 200,
+              "height": 110
+            },
+            "attrs": {
+              "text": {
+                "text": "Loyalty- und\nVoucher-\nDatenbank"
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "zIndex": 13,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "f509ec18-f87f-4a84-8291-91a55809d36d"
+                },
+                {
+                  "group": "right",
+                  "id": "69e02076-3c80-48be-a5f4-397c997df448"
+                },
+                {
+                  "group": "bottom",
+                  "id": "ef13d59e-ab0e-4f31-b46d-877151fe41b8"
+                },
+                {
+                  "group": "left",
+                  "id": "28754351-c75d-42d5-9efc-b72e2bfb46d0"
+                }
+              ]
+            },
+            "id": "bc30bd38-31e3-424d-a1ee-b97728e3ca80",
+            "data": {
+              "name": "Loyalty- und\nVoucher-\nDatenbank",
+              "description": "Stempelkarten-Stand, Coupon-Codes und Gift-Voucher-Codes.",
+              "type": "tm.Store",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "isALog": false,
+              "storesCredentials": false,
+              "isEncrypted": false,
+              "isSigned": false
+            }
+          },
+          {
+            "position": {
+              "x": 1260,
+              "y": 600
+            },
+            "size": {
+              "width": 190,
+              "height": 110
+            },
+            "attrs": {
+              "text": {
+                "text": "Kreditkarten-\nanbieter"
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 14,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "41eb5eee-4694-47a2-89d8-d82844f419fe"
+                },
+                {
+                  "group": "right",
+                  "id": "1d9fcccd-7d01-4f59-9511-51c89226dc9c"
+                },
+                {
+                  "group": "bottom",
+                  "id": "ab615784-ae65-4fed-bc16-03736e7d5bc2"
+                },
+                {
+                  "group": "left",
+                  "id": "8f290740-f1ca-492a-bd48-e3afe8aab121"
+                }
+              ]
+            },
+            "id": "74f4bb4f-6259-4f15-91b0-1c3f399ba499",
+            "data": {
+              "name": "Kreditkarten-\nanbieter",
+              "description": "Externer Kreditkartenanbieter (Annahme: nur einer).",
+              "type": "tm.Actor",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "providesAuthentication": false
+            }
+          },
+          {
+            "position": {
+              "x": 1260,
+              "y": 790
+            },
+            "size": {
+              "width": 190,
+              "height": 110
+            },
+            "attrs": {
+              "text": {
+                "text": "Bank\n(Kunde)"
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 15,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "6c65b08a-3cf6-45d2-a23b-2369e172a351"
+                },
+                {
+                  "group": "right",
+                  "id": "cd071e61-736b-498c-9938-0976b8fb52cd"
+                },
+                {
+                  "group": "bottom",
+                  "id": "2600e654-382d-4650-91b4-7371ceb5abc2"
+                },
+                {
+                  "group": "left",
+                  "id": "3046bfc2-1741-41ce-bb21-fed7e1810632"
+                }
+              ]
+            },
+            "id": "b89954e0-dcbb-4840-bb8f-06331217b4f3",
+            "data": {
+              "name": "Bank\n(Kunde)",
+              "description": "Bank des Kunden für Debit-Ladung via Lastschrift (Annahme: nur eine Bank).",
+              "type": "tm.Actor",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "providesAuthentication": false
+            }
+          }
+        ]
+      }
+    ],
+    "diagramTop": 1,
+    "reviewer": "",
+    "threatTop": 1000
+  }
+}
